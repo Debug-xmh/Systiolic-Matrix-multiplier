@@ -1,0 +1,214 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/tool/My_FPGA_ip/frequency_divider/modelsim_proj
+T_opt
+!s110 1712556592
+V48A3A:OckM0I7[F@`7khb3
+04 18 4 work pulse_arrays_pe_tb fast 0
+=1-0c9d9241b61a-66138a2f-14b-3ac8
+o-quiet -auto_acc_if_foreign -work pulsating_arrays +acc
+n@_opt
+OL;O;10.4;61
+R0
+vdsp_mul
+Z1 !s110 1712892108
+!i10b 1
+!s100 ^n71L6bzV8Zg4:=@h<MQW1
+IgBB<e=aoXjdE;?iAbTioi0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dD:/tool/My_FPGA_ip/pulsating_arrays/modelsim_proj
+w1712757484
+8D:/tool/My_FPGA_ip/pulsating_arrays/dsp_mul.v
+FD:/tool/My_FPGA_ip/pulsating_arrays/dsp_mul.v
+L0 1
+Z4 OL;L;10.4;61
+r1
+!s85 0
+31
+!s108 1712892108.222000
+!s107 D:/tool/My_FPGA_ip/pulsating_arrays/dsp_mul.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/tool/My_FPGA_ip/pulsating_arrays/dsp_mul.v|
+!i113 0
+Z5 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vfifo_sync
+R1
+!i10b 1
+!s100 H^CQF]_eNT@MnjPm9Ec[K0
+IRoP3Yk:53=Rnl3IWLh@Q72
+R2
+R3
+w1712727785
+8D:/tool/My_FPGA_ip/pulsating_arrays/fifo_sync.v
+FD:/tool/My_FPGA_ip/pulsating_arrays/fifo_sync.v
+L0 7
+R4
+r1
+!s85 0
+31
+!s108 1712892108.291000
+!s107 D:/tool/My_FPGA_ip/pulsating_arrays/fifo_sync.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/tool/My_FPGA_ip/pulsating_arrays/fifo_sync.v|
+!i113 0
+R5
+vFIX_unsigned_MUL
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 M5[V@CVRgM3Y;3c1eF0=33
+Ia24]jb4nm=3oYNMVAZhQ;0
+R3
+w1712332130
+Z6 8D:/tool/My_FPGA_ip/pulsating_arrays/MUL_Pipline/FIX_unsigned_MUL.v
+Z7 FD:/tool/My_FPGA_ip/pulsating_arrays/MUL_Pipline/FIX_unsigned_MUL.v
+L0 3
+R4
+!s108 1712555102.273000
+Z8 !s107 D:/tool/My_FPGA_ip/pulsating_arrays/MUL_Pipline/FIX_unsigned_MUL.v|
+Z9 !s90 -reportprogress|300|-work|pulsating_arrays|-vopt|-stats=none|D:/tool/My_FPGA_ip/pulsating_arrays/MUL_Pipline/FIX_unsigned_MUL.v|
+!i113 0
+Z10 o-work pulsating_arrays -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@f@i@x_unsigned_@m@u@l
+vFIX_unsigned_pipline_MUL
+R1
+!i10b 1
+!s100 ZW;E2DzRod;0<CDkWc<>b2
+ILA[oh2K=fY_Kg_7YA[VBA1
+R2
+R3
+w1712555267
+R6
+R7
+L0 3
+R4
+r1
+!s85 0
+31
+!s108 1712892108.008000
+R8
+R9
+!i113 0
+R10
+n@f@i@x_unsigned_pipline_@m@u@l
+vmultiply_cell
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 Qng5o5=E@?BPI>WG;if>01
+IKPZYQ4=J3cE6^ZG?0QRY03
+R3
+w1712329907
+8D:/tool/My_FPGA_ip/pulsating_arrays/MUL_Pipline/multiply_cell.v
+FD:/tool/My_FPGA_ip/pulsating_arrays/MUL_Pipline/multiply_cell.v
+L0 1
+R4
+!s108 1712892108.108000
+!s107 D:/tool/My_FPGA_ip/pulsating_arrays/MUL_Pipline/multiply_cell.v|
+!s90 -reportprogress|300|-work|pulsating_arrays|-vopt|-stats=none|D:/tool/My_FPGA_ip/pulsating_arrays/MUL_Pipline/multiply_cell.v|
+!i113 0
+R10
+vpulse_arrays
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 MhkS1JZCHA`6895Y`PeQ62
+I5`e`d;=U;QAWfYY1SQMBd2
+R3
+w1712892100
+8D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays.v
+FD:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays.v
+L0 1
+R4
+!s108 1712892108.358000
+!s107 D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays.v|
+!i113 0
+R5
+vpulse_arrays_pe
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 K05Egb[JCn`0G=cNccN4Z0
+INo6zfkKF^J:iR[nBQC2VQ3
+R3
+w1712847987
+8D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_pe.v
+FD:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_pe.v
+L0 1
+R4
+!s108 1712892107.770000
+!s107 D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_pe.v|
+!s90 -reportprogress|300|-work|pulsating_arrays|-vopt|-stats=none|D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_pe.v|
+!i113 0
+R10
+vpulse_arrays_pe_tb
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 :7JF@_b;k1A]2O75fQ1K01
+Iz?DUY`h[TXc2DigQ^dJMi0
+R3
+w1712557141
+Z11 8D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_tb.v
+Z12 FD:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_tb.v
+L0 2
+R4
+!s108 1712557152.086000
+Z13 !s107 D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_tb.v|
+Z14 !s90 -reportprogress|300|-work|pulsating_arrays|-vopt|-stats=none|D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_tb.v|
+!i113 0
+R10
+vpulse_arrays_tb
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 c;6]TY8k0@4DfAdM4Xabm1
+IzSQM1:aa>Xk_?PLVAhB2z3
+R3
+w1712892007
+R11
+R12
+L0 2
+R4
+!s108 1712892107.656000
+R13
+R14
+!i113 0
+R10
+vshift_register
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 _k>W2=:G5HmK>fZ^8am5X0
+I>CU[AHKBLJYVN^kOb@?7@1
+R3
+w1712842048
+8D:/tool/My_FPGA_ip/pulsating_arrays/shift_register.v
+FD:/tool/My_FPGA_ip/pulsating_arrays/shift_register.v
+L0 9
+R4
+!s108 1712892108.451000
+!s107 D:/tool/My_FPGA_ip/pulsating_arrays/shift_register.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/tool/My_FPGA_ip/pulsating_arrays/shift_register.v|
+!i113 0
+R5
