@@ -11,6 +11,7 @@ module pulse_arrays_tb();
     reg clk;
     reg rst;
     reg valid;
+    reg valid_left,valid_up;
 
     reg  [Mritx_M*WIDTH_left-1:0] left;
     reg  [Mritx_L*WIDTH_up-1:0]   up;
@@ -32,6 +33,8 @@ module pulse_arrays_tb();
         left=0;
         up=0;
         valid=0;
+        valid_left=0;
+        valid_up=0;
         m=0;
         n=0;
         #10;
@@ -74,6 +77,8 @@ module pulse_arrays_tb();
         m=1;
         n=1;
         valid=1;
+        valid_left=1;
+        valid_up=1;
         #10;
         #1000;
         $stop;
@@ -87,10 +92,15 @@ always @(posedge clk ) begin
         if(m<Mritx_N)begin
             left= {left_mtrix[Mritx_M*Mritx_N-m-1],left_mtrix[(Mritx_M-1)*Mritx_N-m-1],left_mtrix[(Mritx_M-2)*Mritx_N-m-1]};
         end
+        else
+            valid_left=0;
 
         if(n<Mritx_N)begin
             up= {up_mtrix[(Mritx_N-n)*Mritx_L-1],up_mtrix[(Mritx_N-n)*Mritx_L-1-1],up_mtrix[(Mritx_N-n)*Mritx_L-1-2]};
         end
+        else
+            valid_up=0;
+
         if(m==Mritx_N&&n==Mritx_N)
             valid=0;
         m=m+1;
@@ -113,7 +123,8 @@ pulse_arrays #(
 ) pulse_arrays_inst (
     .clk(clk),
     .rst(rst),
-    .valid(valid),
+    .valid_left(valid_left),
+    .valid_up(valid_up),
     .left(left),
     .up(up),
     .ready(),

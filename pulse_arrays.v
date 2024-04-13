@@ -10,9 +10,10 @@ module pulse_arrays  #(
     input   clk,
     input   rst,
 
-    input   wire    valid,
-    input   wire  [Mritx_M*WIDTH_left-1:0]         left,
-    input   wire  [Mritx_L*WIDTH_up-1:0]           up,
+    input   wire    valid_left,
+    input   wire    valid_up,
+    input   wire  [Mritx_M*WIDTH_left-1:0]   left,
+    input   wire  [Mritx_L*WIDTH_up-1:0]     up,
 
     output  reg     ready,                          //ready for input
     output  wire  [WIDTH_out*Mritx_M-1:0]    product 
@@ -27,7 +28,6 @@ module pulse_arrays  #(
     wire    [WIDTH_out-1:0]          left_temp [Mritx_M*Mritx_L-1:0];   //x_unite_wire
     wire    [WIDTH_up-1:0]           up_temp   [Mritx_M*Mritx_L-1:0];   //y_unite_wire
 
-
 //enable  signal
 
     // reg     [Mritx_M-1:0]           left_shift_en;
@@ -41,16 +41,19 @@ module pulse_arrays  #(
     wire    [WIDTH_out-1:0] out_data[Mritx_M*Mritx_L-1:0];  
 
 
-assign left_temp[0] = valid?{{(WIDTH_out-WIDTH_left){1'd0}},left[WIDTH_left-1:0]}:0;
-assign up_temp[0]   = valid?up[WIDTH_up-1:0]:0;
+assign left_temp[0] = valid_left?{{(WIDTH_out-WIDTH_left){1'd0}},left[WIDTH_left-1:0]}:0;
+assign up_temp[0]   = valid_up?up[WIDTH_up-1:0]:0;
 
 always @(posedge clk ) begin
     if(!rst)begin
         state <= idl;
+        star  <= 0;
+        export<= 0;
         ready <= 0;
+        finish<= 0;
         cnt_flow1 <= 0;
         cnt_flow2 <= 0;
-        mode_control  <= 0;
+        mode_control   <= 0;
     end
 
     else begin
@@ -63,7 +66,7 @@ always @(posedge clk ) begin
             cnt_flow1 <= 0;
             cnt_flow2 <= 0;
             mode_control <= 0;
-            if(valid)
+            if(valid_left&valid_up)
                 state <= state_in;
             else
                 state <= idl;
@@ -217,7 +220,7 @@ generate
             )shift_register_left(
                 .clk(clk),
                 .rst(rst),
-                .shift_en(valid),
+                .shift_en(valid_left),
                 .shift_in(left[(m+1)*WIDTH_left-1:(m)*WIDTH_left]),
                 .shift_out(left_temp[m*Mritx_L])
             );
@@ -232,7 +235,7 @@ generate
             )shift_register_up(
                 .clk(clk),
                 .rst(rst),
-                .shift_en(valid),
+                .shift_en(valid_up),
                 .shift_in(up[(n+1)*WIDTH_up-1:n*WIDTH_up]),
                 .shift_out(up_temp[n])
             );

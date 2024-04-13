@@ -5,7 +5,7 @@ module pulse_arrays_pe  #(
 )(
     input   wire    clk,
     input   wire    rst,
-    input   wire    [1:0]mode,           // mode=0 tpu_computer mode=1 shift out_data
+    input   wire    [1:0]mode,           // mode=0 tpu_computer mode=1,2 shift out_data
 
     input   wire    [WIDTH_out-1:0]  left,
     input   wire    [WIDTH_up-1:0]  up,
@@ -24,12 +24,13 @@ always@(posedge  clk)begin
         out_data <=  0;
     end
     else begin
+        //computer
         if(mode==0)begin
             right<= left;//{{(WIDTH_out-WIDTH_left){1'd0}},left}
             down     <=  up;
             out_data <=  temp_data+out_data;
         end
-
+        //shift out_data
         else if(mode==2)begin                  
             right    <=  out_data;
             out_data <=  0;
@@ -41,7 +42,7 @@ always@(posedge  clk)begin
     end
 end
 
-    //module instantiation
+    //multiply  module instantiation
     FIX_unsigned_MUL  #(.WIDTH_multiplicand(WIDTH_left), .WIDTH_multiplier(WIDTH_up))
     uut
     (

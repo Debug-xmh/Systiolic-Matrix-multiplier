@@ -5,33 +5,12 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	FIX_unsigned_pipline_MUL
 
-} {} {}} D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays.v {1 {vlog -work work -vopt -stats=none D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module pulse_arrays
-
-Top level modules:
-	pulse_arrays
-
-} {} {}} D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_pe.v {1 {vlog -work pulsating_arrays -vopt -stats=none D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_pe.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module pulse_arrays_pe
-
-Top level modules:
-	pulse_arrays_pe
-
 } {} {}} D:/tool/My_FPGA_ip/pulsating_arrays/shift_register.v {1 {vlog -work work -vopt -stats=none D:/tool/My_FPGA_ip/pulsating_arrays/shift_register.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module shift_register
 
 Top level modules:
 	shift_register
-
-} {} {}} D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_tb.v {1 {vlog -work pulsating_arrays -vopt -stats=none D:/tool/My_FPGA_ip/pulsating_arrays/pulse_arrays_tb.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module pulse_arrays_tb
-
-Top level modules:
-	pulse_arrays_tb
 
 } {} {}} D:/tool/My_FPGA_ip/pulsating_arrays/dsp_mul.v {1 {vlog -work work -vopt -stats=none D:/tool/My_FPGA_ip/pulsating_arrays/dsp_mul.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
